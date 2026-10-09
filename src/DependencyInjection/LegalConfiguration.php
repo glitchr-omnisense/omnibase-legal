@@ -151,9 +151,8 @@ class LegalConfiguration extends AbstractBaseConfiguration
             $config['roles']['readers'] = $defaults['readers'];
         }
         // A mediator the site names replaces the profession's whole: never half of one with the other's address.
-        if (!\array_key_exists('mediator', $config)) {
-            $config['mediator'] = $defaults['mediator'];
-        }
+        $mediator = $config['mediator'] ?? $defaults['mediator'];
+        $config['mediator'] = ['name' => $mediator['name'] ?? null, 'address' => $mediator['address'] ?? null, 'email' => $mediator['email'] ?? null, 'url' => $mediator['url'] ?? null];
         if (!\array_key_exists('rules_url', $config)) {
             $config['rules_url'] = $defaults['rules_url'];
         }

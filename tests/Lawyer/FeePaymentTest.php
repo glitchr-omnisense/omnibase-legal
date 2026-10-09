@@ -5,11 +5,14 @@ namespace Base\Legal\Tests\Lawyer;
 use Base\Legal\Lawyer\Compliance\PaymentScopeCheck;
 use Base\Legal\Lawyer\Payment\FeePayment;
 use Base\Office\Compliance\ComplianceResult;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /** The hook for paying fees online: shown only when the marketplace is installed, the option on and a route named. */
 final class FeePaymentTest extends TestCase
 {
+    use NeedsOffice;
+
     public function testOffByDefault(): void
     {
         $payment = new FeePayment();

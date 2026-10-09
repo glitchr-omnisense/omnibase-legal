@@ -6,7 +6,7 @@ use Base\Legal\Lawyer\Repository\AttorneyRepository;
 use Base\Legal\Lawyer\Service\Domains;
 use Base\Legal\Lawyer\Service\LawyerRecord;
 use Base\Legal\Practice\Repository\AreaRepository;
-use Base\Office\Controller\Admin\AdminPageTrait;
+use Base\Legal\Practice\Controller\Admin\AdminScreenTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -23,7 +23,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[IsGranted('ROLE_ADMIN')]
 class DeclarationController extends AbstractController
 {
-    use AdminPageTrait;
+    use AdminScreenTrait;
 
     #[Route('/admin/legal/declaration', name: 'legal_admin_declaration', methods: ['GET'], defaults: ['_nest' => true])]
     public function index(LawyerRecord $record, Domains $domains, AttorneyRepository $attorneys, AreaRepository $areas): Response

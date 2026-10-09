@@ -15,7 +15,6 @@
         "php": "^8.2",
         "doctrine/orm": "^2.15|^3.0",
         "glitchr/omnibase": "3.0.*-dev",
-        "omnibase/office": "dev-main",
         "symfony/config": "^6.4|^7.0|^8.0",
         "symfony/dependency-injection": "^6.4|^7.0|^8.0",
         "symfony/http-kernel": "^6.4|^7.0|^8.0",
@@ -26,6 +25,7 @@
         "phpunit/phpunit": "^10.5|^11.0|^12.0"
     },
     "suggest": {
+        "omnibase/office": "Required by the lawyers' and the notaries' profiles (a practice: fields of practice, appointments, the client's space, the compliance widget); a jurist's site does without",
         "omnibase/admin": "The back office: the fields of practice, the lawyers, the settings, the memo for the Ordre, the compliance widget",
         "omnibase/marketplace": "A lawyer's fee note paid online (fees only, never clients' funds): the fees page links to it when it is installed and legal.lawyer.payment.enabled is set",
         "omnibase/consulting": "A jurist's offerings: the profile's guard refuses one that announces what the law of 31 December 1971 reserves to a regulated profession"

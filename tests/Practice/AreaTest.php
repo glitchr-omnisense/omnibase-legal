@@ -4,6 +4,7 @@ namespace Base\Legal\Tests\Practice;
 
 use Base\Legal\Practice\Entity\Area;
 use Doctrine\ORM\Mapping as ORM;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,6 +14,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class AreaTest extends TestCase
 {
+    use NeedsOffice;
+
     public function testWhatIsDoneInTheFieldIsAListEditedOneALine(): void
     {
         $area = (new Area('Succession et transmission'))->setItemsText("Acte de notoriété\n\n  Donation-partage \nTestament");

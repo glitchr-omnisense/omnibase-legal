@@ -4,11 +4,14 @@ namespace Base\Legal\Tests\Lawyer;
 
 use Base\Legal\Lawyer\Entity\Attorney;
 use Base\Legal\Lawyer\Enum\Specialisation;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /** A specialisation is a mention of the official list, or it is not kept. */
 final class AttorneyTest extends TestCase
 {
+    use NeedsOffice;
+
     public function testTheOfficialListHasTwentyEightMentions(): void
     {
         self::assertCount(28, Specialisation::cases());

@@ -13,7 +13,7 @@ use Base\Field\TextareaField;
 use Base\Field\TextField;
 use Base\Legal\Lawyer\Entity\Attorney;
 use Base\Legal\Lawyer\Enum\Specialisation;
-use Base\Office\Controller\Admin\OpenToTrait;
+use Base\Legal\Practice\Controller\Admin\AdminScreenTrait;
 
 /**
  * A member of the team as a lawyer: bar, oath, and what RIN art. 10.2
@@ -22,7 +22,7 @@ use Base\Office\Controller\Admin\OpenToTrait;
  */
 class AttorneyCrudController extends AbstractCrudController
 {
-    use OpenToTrait;
+    use AdminScreenTrait;
 
     public static function getEntityFqcn(): string
     {

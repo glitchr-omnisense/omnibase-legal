@@ -6,6 +6,7 @@ use Base\Legal\Lawyer\LawyerProfile;
 use Base\Legal\Notary\NotaryProfile;
 use Base\Legal\Practice\Guard\Wording;
 use PHPUnit\Framework\Attributes\DataProvider;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -16,6 +17,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class WordingTest extends TestCase
 {
+    use NeedsOffice;
+
     #[DataProvider('forbidden')]
     public function testComparisonAndAdvertisingAreFoundWhateverTheProfession(string $text, string $label): void
     {

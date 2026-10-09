@@ -8,6 +8,7 @@ use Base\Legal\Practice\Security\OfficeAudience;
 use Base\Office\Entity\Share\Document;
 use Base\Office\Share\AudienceResolverInterface as Audience;
 use PHPUnit\Framework\Attributes\DataProvider;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Core\Role\RoleHierarchy;
 
@@ -18,6 +19,8 @@ use Symfony\Component\Security\Core\Role\RoleHierarchy;
  */
 final class OfficeAudienceTest extends TestCase
 {
+    use NeedsOffice;
+
     /** @return iterable<string, array{string, list<string>, string}> the profession, its readers, a role of the rest of its staff */
     public static function practices(): iterable
     {

@@ -14,7 +14,7 @@ use Base\Field\TextareaField;
 use Base\Field\TextField;
 use Base\Legal\Practice\Entity\Area;
 use Base\Legal\Practice\ProfileInterface;
-use Base\Office\Controller\Admin\OpenToTrait;
+use Base\Legal\Practice\Controller\Admin\AdminScreenTrait;
 use Symfony\Contracts\Service\Attribute\Required;
 
 /**
@@ -24,7 +24,7 @@ use Symfony\Contracts\Service\Attribute\Required;
  */
 class AreaCrudController extends AbstractCrudController
 {
-    use OpenToTrait;
+    use AdminScreenTrait;
 
     private string $profession = 'lawyer';
 

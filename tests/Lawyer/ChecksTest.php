@@ -17,6 +17,7 @@ use Base\Legal\Practice\Repository\AreaRepository;
 use Base\Office\Compliance\ComplianceResult;
 use Base\Office\Entity\Member;
 use Base\Service\SettingBagInterface;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -26,6 +27,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class ChecksTest extends TestCase
 {
+    use NeedsOffice;
+
     // ── RIN art. 10.5: the domain name ───────────────────────────────
 
     public function testTheDomainNameCarriesTheName(): void

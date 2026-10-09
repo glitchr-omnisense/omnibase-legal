@@ -18,6 +18,7 @@ use Base\Office\Entity\Office;
 use Base\Office\Repository\MemberRepository;
 use Base\Office\Repository\OfficeRepository;
 use Base\Service\SettingBagInterface;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -27,6 +28,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class ChecksTest extends TestCase
 {
+    use NeedsOffice;
+
     // ── Identification ───────────────────────────────────────────────
 
     public function testAnOfficeIsIdentifiedByItsHolderItsAddressItsPhoneAndItsChamber(): void

@@ -4,6 +4,7 @@ namespace Base\Legal\Tests\Lawyer;
 
 use Base\Legal\Lawyer\Guard\DomainName;
 use PHPUnit\Framework\Attributes\DataProvider;
+use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,6 +15,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class DomainNameTest extends TestCase
 {
+    use NeedsOffice;
+
     private const NAMES = ['Cabinet Maréval', 'Me Hortense Maréval', 'Me Lucien d’Orgeval'];
 
     #[DataProvider('domains')]
