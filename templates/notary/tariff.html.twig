@@ -1,0 +1,48 @@
+{#
+ # The tariff (Base\Legal\Notary\Controller\Client\TariffController): regulated, so the page explains what
+ # the costs are made of and sends to the official text - it copies no scale that an order may change -, then
+ # prints what is the office's own: its discounts, its fees for what the tariff does not cover.
+ #}
+{% extends office_layout() %}
+
+{% block title %}{{ 'notary.tariff.title'|trans({}, 'legal') }}{% endblock %}
+{% block description %}{{ 'notary.tariff.lead'|trans({}, 'legal') }}{% endblock %}
+
+{% block content %}
+<section class="of-page lg-tariff">
+    <header class="of-page-head">
+        <h1>{{ 'notary.tariff.title'|trans({}, 'legal') }}</h1>
+        <p class="of-lead">{{ 'notary.tariff.lead'|trans({}, 'legal') }}</p>
+    </header>
+
+    <h2>{{ 'notary.tariff.what'|trans({}, 'legal') }}</h2>
+    <ol class="lg-steps">
+        <li>{{ 'notary.tariff.what_taxes'|trans({}, 'legal')|raw }}</li>
+        <li>{{ 'notary.tariff.what_disbursements'|trans({}, 'legal')|raw }}</li>
+        <li>{{ 'notary.tariff.what_emoluments'|trans({}, 'legal')|raw }}</li>
+    </ol>
+
+    <h2>{{ 'notary.tariff.regulated'|trans({}, 'legal') }}</h2>
+    <p>{{ 'notary.tariff.regulated_text'|trans({order: tariff.order}, 'legal') }}{% if tariff.until %} {{ 'notary.tariff.regulated_until'|trans({date: tariff.until|format_datetime('long', 'none', locale=app.request.locale)}, 'legal') }}{% endif %}</p>
+    <h3>{{ 'notary.tariff.official'|trans({}, 'legal') }}</h3>
+    <ul class="lg-official">
+        {% if tariff.code_url %}<li><a href="{{ tariff.code_url }}" rel="noopener external" target="_blank">{{ 'notary.tariff.official_code'|trans({}, 'legal') }}</a></li>{% endif %}
+        {% if tariff.order_url %}<li><a href="{{ tariff.order_url }}" rel="noopener external" target="_blank">{{ 'notary.tariff.official_order'|trans({order: tariff.order}, 'legal') }}</a></li>{% endif %}
+        {% if tariff.info_url %}<li><a href="{{ tariff.info_url }}" rel="noopener external" target="_blank">{{ 'notary.tariff.official_info'|trans({}, 'legal') }}</a></li>{% endif %}
+    </ul>
+
+    <h2>{{ 'notary.tariff.discounts'|trans({}, 'legal') }}</h2>
+    {% if record.discounts %}<div class="of-prose">{{ record.discounts|nl2br }}</div>{% else %}<p class="of-notice">{{ 'notary.tariff.discounts_missing'|trans({}, 'legal') }}</p>{% endif %}
+
+    <h2>{{ 'notary.tariff.fees'|trans({}, 'legal') }}</h2>
+    <p>{{ 'notary.tariff.fees_text'|trans({}, 'legal') }}</p>
+    {% if record.fees %}<div class="of-prose">{{ record.fees|nl2br }}</div>{% endif %}
+    <p>{{ 'notary.tariff.statement'|trans({}, 'legal') }}</p>
+
+    <h2>{{ 'notary.tariff.payment'|trans({}, 'legal') }}</h2>
+    <p>{{ 'notary.tariff.payment_text'|trans({}, 'legal') }}</p>
+
+    <h2>{{ 'notary.tariff.dispute'|trans({}, 'legal') }}</h2>
+    <p>{{ 'notary.tariff.dispute_text'|trans({}, 'legal') }} <a href="{{ path('legal_mediation') }}">{{ 'notary.tariff.dispute_link'|trans({}, 'legal') }}</a></p>
+</section>
+{% endblock %}

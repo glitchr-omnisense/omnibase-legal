@@ -1,0 +1,341 @@
+# omnibase/legal. First what a firm and an office share; then, under its name, what each profession says of its
+# own (lawyer, notary, jurist): the bundle reads "<profession>.<key>" for the site's profession.
+#
+# {the_practice}, {The_practice}, {at_the_practice}, {of_the_practice} are omnibase/office's
+# (office.vocabulary.practice): "le cabinet", "l’étude", "l’office"...
+
+areas:
+    title: Domaines d’intervention
+    none: Les domaines d’intervention seront présentés ici.
+    team: 'Qui s’en occupe {at_the_practice}'
+    others: Autres domaines
+    ask: Demander un rendez-vous
+    cost: Combien cela coûte-t-il ?
+
+mediation:
+    title: Médiation
+    lead: 'En cas de différend avec {the_practice}, une solution amiable peut être recherchée avec l’aide d’un tiers.'
+    first: 'D’abord, {the_practice}'
+    first_text: 'Écrivez {at_the_practice} pour exposer votre réclamation ; une réponse vous est adressée.'
+    coordinates: Coordonnées du médiateur
+    site: Site du médiateur
+
+space:
+    title: Espace client
+    hello: Votre espace
+    next: Rendez-vous
+    unread: '{count, plural, one {# nouveau} other {# nouveaux}}'
+    all_documents: Tous les documents et dépôt
+    ask: Demander un rendez-vous
+    nav:
+        home: Accueil
+        appointments: Rendez-vous
+        documents: Documents
+
+request:
+    title: Demander un rendez-vous
+    lead: 'Indiquez l’objet de votre demande ; {the_practice} vous rappelle pour convenir d’une date.'
+    type: Objet du rendez-vous
+    choose: Choisir…
+    member: Avec
+    no_preference: Sans préférence
+    name: Nom et prénom
+    email: Courriel
+    phone: Téléphone
+    message: Votre demande, en quelques mots
+    message_help: 'Facultatif. Conservé chiffré, lu par {the_practice} seulement.'
+    privacy: 'Vos coordonnées servent à vous recontacter pour fixer ce rendez-vous. Elles sont conservées {months} mois au plus si aucune suite n’est donnée, et ne sont transmises à personne.'
+    submit: Envoyer la demande
+    sent: 'Votre demande est enregistrée. {The_practice} vous rappelle pour convenir d’une date ; un courriel vous le confirme.'
+    none: 'La demande de rendez-vous en ligne n’est pas ouverte. Appelez {the_practice}.'
+    unavailable: 'La demande ne peut pas être enregistrée pour le moment. Appelez {the_practice}.'
+    how: Comment cela se passe
+    how_1: Vous envoyez votre demande.
+    how_2: '{The_practice} vous rappelle et fixe la date avec vous.'
+    phone_instead: 'Vous préférez téléphoner :'
+
+compliance:
+    mediator_url: 'L’adresse du site du médiateur n’est pas une adresse https : {url}.'
+
+admin:
+    area:
+        singular: Domaine d’intervention
+        plural: Domaines d’intervention
+    field:
+        name: Nom
+        position: Ordre
+        summary: En une phrase
+        body: Texte de la page
+        members: Qui s’en occupe
+        active: En ligne
+
+# ── Avocats ─────────────────────────────────────────────────────────
+
+lawyer:
+    contact:
+        notice: 'Ce formulaire n’est pas confidentiel et ne crée aucune relation entre vous et le cabinet. N’y joignez et n’y décrivez <strong>aucune pièce ni information confidentielle</strong> — une fois votre dossier ouvert, déposez vos documents dans le coffre chiffré de votre espace client.'
+
+    areas:
+        lead: Les matières dans lesquelles le cabinet conseille et défend.
+        items: Questions traitées
+        cost_text: Les honoraires sont fixés avec vous, par écrit, avant toute intervention.
+        cost_link: Voir les honoraires
+
+    attorney:
+        bar: Barreau
+        sworn_in: Prestation de serment
+        specialisations: '{count, plural, one {Mention de spécialisation} other {Mentions de spécialisation}}'
+        qualification: Qualification spécifique
+        dominant_fields: Domaines d’activités dominantes
+
+    fees:
+        title: Honoraires
+        lead: Les honoraires de l’avocat sont libres ; ils sont convenus avec vous avant toute intervention, et vous savez à tout moment où ils en sont.
+        agreement: La convention d’honoraires
+        agreement_text: 'Sauf urgence, force majeure ou aide juridictionnelle totale, le cabinet conclut avec vous, par écrit, une convention d’honoraires : elle précise le montant ou le mode de calcul des honoraires pour les diligences prévisibles, ainsi que les frais et débours envisagés. Vous êtes ensuite informé régulièrement de leur évolution.'
+        how: Comment ils sont fixés
+        how_text: Les honoraires tiennent compte, selon les usages, de votre situation, de la difficulté de l’affaire, des frais exposés et des diligences accomplies.
+        terms_missing: Le cabinet n’a pas encore indiqué ici ses modalités d’honoraires.
+        no_quota_litis: 'Un honoraire de résultat peut compléter l’honoraire convenu ; il ne peut jamais constituer à lui seul toute la rémunération : le pacte de quota litis est interdit.'
+        first: Premier rendez-vous
+        legal_aid: Aide juridictionnelle
+        payment: Règlement
+        payment_text: 'Les honoraires se règlent par chèque, par virement ou par carte bancaire, sur présentation d’une note d’honoraires. Avant tout règlement définitif, un compte détaillé vous est remis.'
+        pay_online: Régler une note d’honoraires
+        pay_scope: Le paiement en ligne ne sert qu’au règlement des honoraires du cabinet. Les sommes destinées à un tiers ou à l’exécution d’une décision ne se versent jamais ici.
+        dispute: En cas de désaccord
+        dispute_text: Adressez-vous d’abord au cabinet. Si le différend persiste, les contestations d’honoraires relèvent du bâtonnier ; le client consommateur peut aussi saisir gratuitement le médiateur de la consommation de la profession d’avocat.
+        dispute_link: Médiation
+
+    mediation:
+        then: Ensuite, le médiateur de la consommation de la profession d’avocat
+        then_text: Si la réponse ne vous satisfait pas, ou faute de réponse, le client consommateur peut saisir gratuitement le médiateur de la consommation de la profession d’avocat, institué par le Conseil national des barreaux.
+        body: Le bâtonnier
+        body_text: 'Le cabinet est inscrit au {body}. Les réclamations relatives aux honoraires peuvent être portées devant son bâtonnier.'
+
+    space:
+        lead: Vos rendez-vous et vos pièces, à l’abri — les documents sont chiffrés et ne circulent jamais par courriel.
+        documents: Pièces et documents
+
+    request:
+        notice: 'Dites en quelques mots de quoi il s’agit, <strong>sans détail confidentiel ni pièce</strong>, et sans nommer la partie adverse : le cabinet vérifie d’abord qu’il peut vous assister. Vos documents se déposent ensuite dans votre espace client.'
+        how_3: Au premier rendez-vous, les honoraires sont convenus par écrit ; votre espace client s’ouvre ensuite.
+
+    settings:
+        firm: Avocats — dénomination du cabinet
+        structure: Avocats — structure d’exercice (exercice individuel, SELARL, AARPI…)
+        bar: Avocats — barreau d’inscription
+        network: Avocats — réseau dont le cabinet est membre (facultatif)
+        declared_at: Avocats — site déclaré au conseil de l’Ordre le (AAAA-MM-JJ)
+        fees: Avocats — modalités de détermination des honoraires
+        first_meeting: Avocats — premier rendez-vous (durée, prix)
+        legal_aid: Avocats — aide juridictionnelle (acceptée ou non, dans quelles matières)
+
+    compliance:
+        domain: Nom de domaine
+        domain_none: Aucun nom de domaine n’est connu du site — configuration legal.lawyer.domains.
+        domain_generic: '{domains} : le nom de domaine doit comporter le nom de l’avocat ou la dénomination du cabinet ; un nom évoquant de façon générique le titre d’avocat, un domaine du droit ou une activité de l’avocat est interdit (RIN, art. 10.5).'
+        domain_mixed: '{domains} : le nom de domaine comporte bien le nom, mais aussi un domaine du droit ou une activité — à soumettre au conseil de l’Ordre (RIN, art. 10.5).'
+        domain_unnamed: '{domains} : le nom de l’avocat ou la dénomination du cabinet n’y a pas été reconnu (RIN, art. 10.5). Vérifiez la dénomination dans Réglages.'
+        domain_local: '{domains} est une adresse de développement : indiquez le nom de domaine réel (configuration legal.lawyer.domains) pour qu’il soit vérifié (RIN, art. 10.5).'
+        order: Site déclaré au conseil de l’Ordre
+        order_body_advice: Indiquez dans Réglages le barreau d’inscription.
+        order_advice: 'L’ouverture du site, toute modification substantielle et ses noms de domaine sont à communiquer sans délai au conseil de l’Ordre du {body} (RIN, art. 10.5). Indiquez la date dans Réglages ; l’aide-mémoire liste ce qu’il faut transmettre.'
+        order_future: La date de déclaration au conseil de l’Ordre est dans le futur.
+        identification: Identification du cabinet
+        identification_advice: 'Il manque : {missing}. Toute communication permet d’identifier l’avocat, de le localiser, de le joindre, de connaître son barreau et sa structure d’exercice (RIN, art. 10.2) — Réglages, et Lieux et accès.'
+        specialisation: Spécialisations et domaines d’activités dominantes
+        specialisation_advice: 'À corriger — {found}. Seul le titulaire d’un certificat de spécialisation emploie les mots « spécialiste », « spécialisé », « spécialité », « spécialisation » ; les domaines d’activités dominantes sont trois au plus (RIN, art. 10.2).'
+        wording: Textes sans comparaison ni dénigrement
+        wording_advice: 'À relire — {found}. Sont prohibées toute mention comparative ou dénigrante et toute référence à des fonctions juridictionnelles (RIN, art. 10.2).'
+        fees: Information sur les honoraires
+        fees_advice: Indiquez dans Réglages comment les honoraires du cabinet sont déterminés — la page Honoraires les publie, avec la convention d’honoraires (RIN, art. 11.1 et 11.2).
+        mediator: Coordonnées du médiateur de la consommation de la profession d’avocat
+        mediator_advice: Le nom et les coordonnées du médiateur ne sont plus configurés (legal.mediator) — la page Médiation et les mentions légales les publient.
+        payment: Paiement en ligne — honoraires seulement
+        payment_missing: Le paiement en ligne est activé mais omnibase/marketplace n’est pas installé — le lien n’est pas affiché.
+        payment_route: Le paiement en ligne est activé sans page de paiement (legal.lawyer.payment.route) — le lien n’est pas affiché.
+        payment_scope: 'La page de paiement ne doit recevoir que des honoraires (RIN, art. 11.5) ; les fonds maniés pour un client se déposent à la CARPA (RIN, art. 6.2).'
+
+    admin:
+        attorney:
+            singular: Avocat
+            plural: Avocats
+        field:
+            items: Questions traitées
+            member: Membre de l’équipe
+            bar: Barreau
+            sworn_in: Année du serment
+            specialisations: Mentions de spécialisation (certificats obtenus)
+            qualification: Qualification spécifique
+            dominant_fields: Domaines d’activités dominantes
+        help:
+            body: Un paragraphe par bloc, séparés par une ligne vide. Sans comparaison, et sans le mot « spécialité » si personne au cabinet n’est titulaire d’un certificat.
+            items: Une par ligne.
+            bar: Vide — celui du cabinet.
+            specialisations: Deux au plus, dans la liste officielle. Uniquement les certificats régulièrement obtenus et non invalidés.
+            qualification: Telle qu’elle figure sur le certificat.
+            dominant_fields: Un par ligne, trois au plus, issus d’une pratique effective et habituelle.
+        declaration:
+            title: Aide-mémoire — conseil de l’Ordre
+            lead: Ce que le site dit aujourd’hui et qui se communique au conseil de l’Ordre. À imprimer ou à reprendre dans le courrier ; rien n’est envoyé d’ici.
+            to: Destinataire
+            to_bar: 'Conseil de l’Ordre du {bar}'
+            declared: 'site déclaré le {date}'
+            not_declared: site non déclaré à ce jour
+            print: Imprimer
+            settings: Réglages
+            domains: Noms de domaine
+            domains_rule: 'RIN, art. 10.5 — l’avocat qui ouvre ou modifie substantiellement un site en informe le conseil de l’Ordre sans délai et lui communique les noms de domaine. Le nom comporte celui de l’avocat ou la dénomination du cabinet, éventuellement précédé ou suivi du mot « avocat ».'
+            verdict:
+                ok: comporte le nom
+                generic: générique — interdit
+                mixed: comporte le nom et un domaine du droit — à soumettre
+                unnamed: nom non reconnu
+                local: adresse de développement — non vérifiable
+            mentions: Spécialisations, qualifications, domaines d’activités dominantes
+            mentions_rule: 'RIN, art. 10.2 — l’avocat qui communique sur ses spécialisations, ses qualifications spécifiques ou ses domaines d’activités dominantes en transmet les termes sans délai au conseil de l’Ordre.'
+            pages: Pages présentant les prestations
+            pages_rule: 'RIN, art. 10.3 — toute publicité est communiquée sans délai au conseil de l’Ordre.'
+            keep: À tenir dans le temps
+            keep_links: 'Visiter régulièrement les sites vers lesquels le site renvoie, et retirer tout lien dont la cible serait contraire aux principes essentiels de la profession (RIN, art. 10.5).'
+            keep_ads: 'Aucun encart ni bannière publicitaire autre que ceux de la profession (RIN, art. 10.5).'
+            keep_change: Toute modification substantielle du site ou de ces mentions se déclare de nouveau.
+            reserve: La conformité intégrée au site ne remplace pas le contrôle du conseil de l’Ordre.
+
+    # The demonstration accounts (Base\Legal\Lawyer\Demo\LawyerDemoAccounts): the button, and what the role sees.
+    demo:
+        avocate:
+            label: Avocate
+            description: 'L’agenda du cabinet, les demandes de rendez-vous à fixer, les documents des clients : elle les lit et leur en adresse.'
+        avocat:
+            label: Collaborateur
+            description: 'L’avocat collaborateur : son agenda, les demandes, les documents des clients, qu’il lit aussi.'
+        secretariat:
+            label: Secrétariat
+            description: 'L’agenda, les demandes de rendez-vous et les messages du site ; il voit qu’un document existe, sans lire ce qui est confidentiel.'
+        cabinet:
+            label: Cabinet
+            description: 'L’administration du cabinet : l’équipe, les domaines, les réglages, le mémo pour l’Ordre, la conformité.'
+        client:
+            label: Client
+            description: 'Son espace : un rendez-vous demandé, un projet de conclusions à lire dans le coffre, une pièce déposée.'
+
+# ── Notaires ────────────────────────────────────────────────────────
+
+notary:
+    contact:
+        notice: Ce formulaire n’est pas confidentiel. N’y joignez et n’y décrivez <strong>aucune pièce ni information confidentielle</strong> — une fois votre dossier ouvert, déposez vos documents dans le coffre chiffré de votre espace client.
+
+    areas:
+        lead: 'Les matières dans lesquelles {the_practice} reçoit des actes et conseille.'
+        items: Actes et démarches
+        cost_text: Les actes de cette matière relèvent pour la plupart du tarif réglementé.
+        cost_link: Voir les tarifs
+
+    tariff:
+        title: Tarifs
+        lead: La rémunération du notaire est fixée par l’État pour les actes tarifés ; elle est la même dans tous les offices de France.
+        what: Ce que recouvrent les « frais de notaire »
+        what_taxes: <strong>Les droits et taxes</strong>, perçus par le notaire pour le compte de l’État et des collectivités, puis reversés au Trésor public.
+        what_disbursements: <strong>Les débours</strong>, sommes avancées pour votre compte afin de payer les intervenants et les documents nécessaires à l’acte.
+        what_emoluments: '<strong>La rémunération {of_the_practice}</strong> — émoluments pour les actes tarifés, honoraires pour les autres prestations.'
+        regulated: Les actes tarifés — émoluments
+        regulated_text: 'Les émoluments sont fixés par le code de commerce (articles L. 444-1 et suivants, R. 444-1 et suivants, A. 444-53 et suivants). Le tarif en vigueur est celui de l’{order}.'
+        regulated_until: 'Il s’applique jusqu’au {date}.'
+        official: Le texte officiel
+        official_code: Code de commerce — tarif des notaires (Légifrance)
+        official_order: 'L’{order} (Légifrance)'
+        official_info: Le tarif expliqué par les Notaires de France
+        discounts: 'Remises pratiquées par {the_practice}'
+        discounts_missing: Les remises pratiquées ne sont pas encore indiquées ici.
+        fees: Les prestations non tarifées — honoraires
+        fees_text: Pour les prestations que le tarif ne couvre pas (consultation, conseil, rédaction de certains actes), le notaire convient avec son client d’honoraires, par une convention écrite établie avant toute intervention.
+        statement: Un état détaillé des frais vous est remis à l’issue des formalités ; il distingue les droits payés au Trésor, les débours, les émoluments et les honoraires.
+        payment: Règlement
+        payment_text: 'Aucun paiement n’est proposé sur ce site. Les règlements se font auprès {of_the_practice}, où l’on vous en indique les modalités.'
+        dispute: En cas de désaccord
+        dispute_text: 'Adressez-vous d’abord {at_the_practice}. Si le différend persiste, vous pouvez saisir gratuitement le médiateur de la consommation du notariat.'
+        dispute_link: Médiation
+
+    mediation:
+        then: Ensuite, le médiateur de la consommation du notariat
+        then_text: 'Si la réponse ne vous satisfait pas, ou faute de réponse, vous pouvez saisir gratuitement le médiateur de la consommation du notariat. Joignez à votre demande la réclamation adressée {at_the_practice}.'
+        body: La chambre des notaires
+        body_text: '{The_practice} relève de la {body}, qui veille au respect des règles de la profession.'
+
+    space:
+        lead: Vos rendez-vous et vos documents, à l’abri — les documents sont chiffrés et ne circulent jamais par courriel.
+        documents: Documents
+
+    request:
+        notice: 'Dites en quelques mots de quoi il s’agit, <strong>sans détail confidentiel ni pièce</strong> : le dossier s’ouvre au rendez-vous, et vos documents se déposent ensuite dans votre espace client.'
+        how_3: Vous recevez la confirmation, et une invitation à ouvrir votre espace client.
+
+    settings:
+        holder: Notaires — structure titulaire de l’office (dénomination et forme)
+        crpcen: Notaires — numéro CRPCEN de l’office
+        chamber: Notaires — chambre dont dépend l’office
+        declared_at: Notaires — site déclaré à la chambre le (AAAA-MM-JJ)
+        brand: Notaires — charte graphique et bloc-marque « Notaires de France » appliqués (oui / non)
+        discounts: Notaires — remises pratiquées, par catégorie d’actes et par tranche (ou « Aucune remise »)
+        fees: Notaires — honoraires des prestations non tarifées
+
+    compliance:
+        email: Adresses de messagerie en notaires.fr
+        email_advice: 'L’adresse professionnelle d’un notaire se termine par « .{suffix} » (règlement professionnel, art. 16.3). À corriger dans Lieux et accès : {addresses}.'
+        email_none: 'Aucune adresse de messagerie n’est indiquée pour l’office. Elle doit se terminer par « .{suffix} » (règlement professionnel, art. 16.3).'
+        email_sender: 'Les courriels du site partent de {addresses} : l’adresse d’envoi devrait elle aussi se terminer par « .{suffix} » (règlement professionnel, art. 16.3).'
+        chamber: Site déclaré à la chambre des notaires
+        chamber_body_advice: Indiquez dans Réglages la chambre dont dépend l’office.
+        chamber_advice: 'L’ouverture du site, et toute modification des pages où l’office propose ses services, sont à déclarer sans délai à la {body} (règlement professionnel, art. 14.4). Indiquez la date de la déclaration dans Réglages.'
+        chamber_future: La date de déclaration à la chambre est dans le futur.
+        mediator: Coordonnées du médiateur de la consommation du notariat
+        mediator_advice: Le nom et les coordonnées du médiateur doivent figurer sur le site (règlement professionnel, art. 25.1) — configuration legal.mediator.
+        tariff: Tarifs et remises affichés
+        tariff_link_advice: La page des tarifs doit renvoyer au texte officiel — configuration legal.notary.tariff.
+        tariff_discounts_advice: Indiquez dans Réglages les remises pratiquées par l’office, par catégorie d’actes et par tranche, ou qu’il n’en pratique aucune — elles sont publiées à la page Tarifs (code de commerce, art. L. 444-4).
+        tariff_outdated: 'La période de l’{order} s’est achevée le {date} : mettez à jour la référence du tarif (configuration legal.notary.tariff).'
+        wording: Textes sans comparaison ni dénigrement
+        wording_advice: 'À relire — {found}. La communication du notaire reste neutre et objective et s’abstient de toute comparaison (règlement professionnel, art. 14.1 et 14.2).'
+        identification: Identification de l’office
+        identification_advice: 'Il manque : {missing}. La structure titulaire et la chambre se saisissent dans Réglages, l’adresse et le téléphone dans Lieux et accès.'
+        brand: Charte graphique et bloc-marque de la profession
+        brand_advice: Le site doit respecter la charte graphique et le plan de nommage du Conseil supérieur du notariat et porter le bloc-marque « Notaires de France » (règlement professionnel, art. 14.4 et 14.5). Ils sont publiés sur l’intranet de la profession — confirmez dans Réglages une fois appliqués.
+
+    admin:
+        field:
+            items: Actes et démarches
+        help:
+            body: Un paragraphe par bloc, séparés par une ligne vide. Sans comparaison avec d’autres offices.
+            items: Un par ligne.
+
+    # The demonstration accounts (Base\Legal\Notary\Demo\NotaryDemoAccounts): the button, and what the role sees.
+    demo:
+        notaire:
+            label: Notaire
+            description: 'L’agenda de l’office, les demandes de rendez-vous à fixer, les documents des clients : il les lit et leur en adresse.'
+        clerc:
+            label: Clerc
+            description: 'Les dossiers qu’il prépare : l’agenda, les demandes, les documents des clients, qu’il lit comme le notaire.'
+        accueil:
+            label: Accueil
+            description: 'Le standard : l’agenda, les demandes de rendez-vous et les messages du site ; il voit qu’un document existe, sans lire ce qui est confidentiel.'
+        etude:
+            label: Étude
+            description: 'L’administration de l’office : l’équipe, les domaines d’intervention, les réglages, le journal des accès, la conformité.'
+        client:
+            label: Client
+            description: 'Son espace : un rendez-vous demandé, un projet d’acte à lire dans le coffre, une pièce déposée.'
+
+# ── Juristes ────────────────────────────────────────────────────────
+
+jurist:
+    # What the law reserves (Base\Legal\Jurist\Enum\ReservedActivity).
+    activity:
+        legal_consultation: Consultation juridique personnalisée
+        deed_drafting: Rédaction d’actes pour autrui
+    # Why a text is refused (Base\Legal\Jurist\Service\RegulatedActivityGuard).
+    guard:
+        legal_consultation: 'Le texte annonce une consultation ou un conseil juridique personnalisé, réservé aux professions qui y sont autorisées (loi du 31 décembre 1971, art. 54 et suivants). Présentez la prestation comme une formation ou une information documentaire, ou indiquez le statut qui vous y autorise (legal.jurist.authorized_status).'
+        deed_drafting: 'Le texte annonce la rédaction d’actes pour autrui, réservée aux professions qui y sont autorisées (loi du 31 décembre 1971, art. 54) : reformulez-le.'

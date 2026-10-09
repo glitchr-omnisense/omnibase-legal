@@ -1,0 +1,28 @@
+{# The fields of practice (Base\Legal\Practice\Controller\Client\PracticeController::areas). #}
+{% extends office_layout() %}
+{% set profession = legal_profession() %}
+
+{% block title %}{{ 'areas.title'|trans({}, 'legal') }}{% endblock %}
+{% block description %}{{ (profession ~ '.areas.lead')|trans({}, 'legal') }}{% endblock %}
+
+{% block content %}
+<section class="of-page lg-areas">
+    <header class="of-page-head">
+        <h1>{{ 'areas.title'|trans({}, 'legal') }}</h1>
+        <p class="of-lead">{{ (profession ~ '.areas.lead')|trans({}, 'legal') }}</p>
+    </header>
+    {% if areas %}
+    <ol class="lg-area-list lg-{{ profession }}">
+        {% for area in areas %}
+        <li>
+            <h2><a href="{{ path('legal_area', {slug: area.slug}) }}">{{ area.name }}</a></h2>
+            {% if area.summary %}<p>{{ area.summary }}</p>{% endif %}
+            {% if area.items %}<p class="of-meta">{{ area.items|join(' · ') }}</p>{% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <p class="of-empty">{{ 'areas.none'|trans({}, 'legal') }}</p>
+    {% endif %}
+</section>
+{% endblock %}

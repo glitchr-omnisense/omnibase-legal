@@ -1,0 +1,29 @@
+{# The client's space: what comes next, what is new (Base\Legal\Practice\Controller\Client\SpaceController::index). #}
+{% extends office_layout() %}
+{% set profession = legal_profession() %}
+
+{% block title %}{{ 'space.title'|trans({}, 'legal') }}{% endblock %}
+
+{% block content %}
+<section class="of-page of-space">
+    <header class="of-page-head">
+        {% include '@Legal/client/space/_nav.html.twig' %}
+        <h1>{{ 'space.hello'|trans({}, 'legal') }}</h1>
+        <p class="of-lead">{{ (profession ~ '.space.lead')|trans({}, 'legal') }}</p>
+    </header>
+    <div class="of-columns">
+        <section aria-labelledby="lg-next">
+            <h2 id="lg-next">{{ 'space.next'|trans({}, 'legal') }}</h2>
+            {% if upcoming %}
+            <ul class="of-appointments">{% for appointment in upcoming %}{% include '@Office/client/space/_appointment.html.twig' with {appointment: appointment, actions: true} %}{% endfor %}</ul>
+            {% else %}<p class="of-empty">{{ 'space.no_upcoming'|trans({}, 'office') }}</p>{% endif %}
+            <p class="of-actions"><a class="of-button" href="{{ path('office_booking') }}">{{ 'space.ask'|trans({}, 'legal') }}</a></p>
+        </section>
+        <section aria-labelledby="lg-docs">
+            <h2 id="lg-docs">{{ (profession ~ '.space.documents')|trans({}, 'legal') }}{% if unread %} <span class="of-badge">{{ 'space.unread'|trans({count: unread}, 'legal') }}</span>{% endif %}</h2>
+            {% include '@Office/client/space/_documents.html.twig' with {documents: documents} %}
+            <p class="of-actions"><a class="of-button of-button-quiet" href="{{ path('office_space_documents') }}">{{ 'space.all_documents'|trans({}, 'legal') }}</a></p>
+        </section>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{#
+ # The consumer mediator, whose coordinates the practice gives (Base\Legal\Practice\Controller\Client\PracticeController::mediation):
+ # the practice first, then the mediator the profession set up (legal.mediator), then the professional body the practice
+ # answers to - a notary's chamber, a lawyer's bâtonnier.
+ #}
+{% extends office_layout() %}
+{% set profession = legal_profession() %}
+
+{% block title %}{{ 'mediation.title'|trans({}, 'legal') }}{% endblock %}
+{% block description %}{{ 'mediation.lead'|trans({}, 'legal') }}{% endblock %}
+
+{% block content %}
+<section class="of-page of-narrow lg-mediation">
+    <header class="of-page-head">
+        <h1>{{ 'mediation.title'|trans({}, 'legal') }}</h1>
+        <p class="of-lead">{{ 'mediation.lead'|trans({}, 'legal') }}</p>
+    </header>
+    <h2>{{ 'mediation.first'|trans({}, 'legal') }}</h2>
+    <p>{{ 'mediation.first_text'|trans({}, 'legal') }}</p>
+    {% if office %}<address class="of-address">{{ office.name }}<br>{{ office.street }}<br>{{ office.postalCode }} {{ office.city }}</address>{% endif %}
+
+    <h2>{{ (profession ~ '.mediation.then')|trans({}, 'legal') }}</h2>
+    <p>{{ (profession ~ '.mediation.then_text')|trans({}, 'legal') }}</p>
+    <h3>{{ 'mediation.coordinates'|trans({}, 'legal') }}</h3>
+    <address class="of-address">{{ mediator.name }}{% if mediator.address %}<br>{{ mediator.address }}{% endif %}{% if mediator.email %}<br><a href="mailto:{{ mediator.email }}">{{ mediator.email }}</a>{% endif %}</address>
+    {% if mediator.url %}<p><a href="{{ mediator.url }}" rel="noopener external" target="_blank">{{ 'mediation.site'|trans({}, 'legal') }}</a> — {{ mediator.url|replace({'https://': ''}) }}</p>{% endif %}
+
+    {% if record.body %}
+    <h2>{{ (profession ~ '.mediation.body')|trans({}, 'legal') }}</h2>
+    <p>{{ (profession ~ '.mediation.body_text')|trans({body: record.body}, 'legal') }}</p>
+    {% endif %}
+</section>
+{% endblock %}

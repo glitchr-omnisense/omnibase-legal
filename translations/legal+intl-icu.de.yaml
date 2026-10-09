@@ -1,0 +1,10 @@
+# omnibase/legal, in German: what omnibase/consulting's guard said in that language - the jurist's profile.
+# The rest of the bundle (the practice, the lawyers', the notaries') is read in English until a site asks for it.
+
+jurist:
+    activity:
+        legal_consultation: Individuelle Rechtsberatung
+        deed_drafting: Urkundenentwurf für Dritte
+    guard:
+        legal_consultation: 'Der Text kündigt eine individuelle Rechtsberatung an, die den dazu befugten Berufen vorbehalten ist (französisches Gesetz vom 31. Dezember 1971, Art. 54 ff.). Stellen Sie die Leistung als Fortbildung oder dokumentarische Information dar, oder geben Sie den Status an, der Sie dazu befugt (legal.jurist.authorized_status).'
+        deed_drafting: 'Der Text kündigt den Entwurf von Urkunden für Dritte an, der den dazu befugten Berufen vorbehalten ist (französisches Gesetz vom 31. Dezember 1971, Art. 54): bitte umformulieren.'

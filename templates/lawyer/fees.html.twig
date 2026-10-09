@@ -1,0 +1,47 @@
+{#
+ # The fees (Base\Legal\Lawyer\Controller\Client\FeesController): how they are set (the firm's words, from the
+ # settings), the written fee agreement, what is forbidden, how they are paid - online only when the application
+ # has plugged a payment page in, and then for fees alone -, and what to do in a disagreement.
+ #}
+{% extends office_layout() %}
+
+{% block title %}{{ 'lawyer.fees.title'|trans({}, 'legal') }}{% endblock %}
+{% block description %}{{ 'lawyer.fees.lead'|trans({}, 'legal') }}{% endblock %}
+
+{% block content %}
+<section class="of-page lg-fees">
+    <header class="of-page-head">
+        <h1>{{ 'lawyer.fees.title'|trans({}, 'legal') }}</h1>
+        <p class="of-lead">{{ 'lawyer.fees.lead'|trans({}, 'legal') }}</p>
+    </header>
+
+    <h2>{{ 'lawyer.fees.agreement'|trans({}, 'legal') }}</h2>
+    <p>{{ 'lawyer.fees.agreement_text'|trans({}, 'legal') }}</p>
+
+    <h2>{{ 'lawyer.fees.how'|trans({}, 'legal') }}</h2>
+    <p>{{ 'lawyer.fees.how_text'|trans({}, 'legal') }}</p>
+    {% if record.fees %}<div class="of-prose lg-terms">{{ record.fees|nl2br }}</div>{% else %}<p class="of-notice">{{ 'lawyer.fees.terms_missing'|trans({}, 'legal') }}</p>{% endif %}
+    <p>{{ 'lawyer.fees.no_quota_litis'|trans({}, 'legal') }}</p>
+
+    {% if record.firstMeeting or priced %}
+    <h2>{{ 'lawyer.fees.first'|trans({}, 'legal') }}</h2>
+    {% if record.firstMeeting %}<p>{{ record.firstMeeting }}</p>{% endif %}
+    {% if priced %}<ul class="lg-priced">{% for type in priced %}<li><span>{{ type.name }}</span> <strong>{{ type.price }}</strong></li>{% endfor %}</ul>{% endif %}
+    {% endif %}
+
+    {% if record.legalAid %}
+    <h2>{{ 'lawyer.fees.legal_aid'|trans({}, 'legal') }}</h2>
+    <p>{{ record.legalAid }}</p>
+    {% endif %}
+
+    <h2>{{ 'lawyer.fees.payment'|trans({}, 'legal') }}</h2>
+    <p>{{ 'lawyer.fees.payment_text'|trans({}, 'legal') }}</p>
+    {% if payment.available %}
+    <p class="of-actions"><a class="of-button" href="{{ path(payment.route) }}">{{ 'lawyer.fees.pay_online'|trans({}, 'legal') }}</a></p>
+    <p class="of-meta">{{ 'lawyer.fees.pay_scope'|trans({}, 'legal') }}</p>
+    {% endif %}
+
+    <h2>{{ 'lawyer.fees.dispute'|trans({}, 'legal') }}</h2>
+    <p>{{ 'lawyer.fees.dispute_text'|trans({}, 'legal') }} <a href="{{ path('legal_mediation') }}">{{ 'lawyer.fees.dispute_link'|trans({}, 'legal') }}</a></p>
+</section>
+{% endblock %}

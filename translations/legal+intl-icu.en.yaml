@@ -1,0 +1,337 @@
+# omnibase/legal. First what a firm and an office share; then, under its name, what each profession says of its
+# own (lawyer, notary, jurist): the bundle reads "<profession>.<key>" for the site's profession.
+#
+# The practice is "the office" here - a law office, a notary's office: omnibase/office's vocabulary
+# ({the_practice}...) only has French forms.
+
+areas:
+    title: Fields of practice
+    none: The fields of practice will be presented here.
+    team: Who handles it at the office
+    others: Other fields
+    ask: Ask for an appointment
+    cost: What does it cost?
+
+mediation:
+    title: Mediation
+    lead: In a dispute with the office, an amicable solution may be sought with the help of a third party.
+    first: First, the office
+    first_text: Write to the office to set out your complaint; you receive an answer.
+    coordinates: The mediator’s contact details
+    site: The mediator’s website
+
+space:
+    title: Client space
+    hello: Your space
+    next: Appointments
+    unread: '{count, plural, one {# new} other {# new}}'
+    all_documents: All documents, and deposit
+    ask: Ask for an appointment
+    nav:
+        home: Home
+        appointments: Appointments
+        documents: Documents
+
+request:
+    title: Ask for an appointment
+    lead: Tell us what your request is about; the office calls you back to agree on a date.
+    type: Purpose of the appointment
+    choose: Choose…
+    member: With
+    no_preference: No preference
+    name: Full name
+    email: E-mail
+    phone: Phone
+    message: Your request, in a few words
+    message_help: Optional. Kept encrypted, read by the office only.
+    privacy: 'Your contact details are used to call you back and set this appointment. They are kept {months} months at most if nothing follows, and are passed on to nobody.'
+    submit: Send the request
+    sent: Your request is registered. The office calls you back to agree on a date; an e-mail confirms it.
+    none: Online appointment requests are not open. Please call the office.
+    unavailable: The request cannot be registered for the moment. Please call the office.
+    how: How it goes
+    how_1: You send your request.
+    how_2: The office calls you back and sets the date with you.
+    phone_instead: 'You would rather call:'
+
+compliance:
+    mediator_url: 'The address of the mediator’s website is not an https address: {url}.'
+
+admin:
+    area:
+        singular: Field of practice
+        plural: Fields of practice
+    field:
+        name: Name
+        position: Order
+        summary: In one sentence
+        body: Text of the page
+        members: Who handles it
+        active: Online
+
+# ── Lawyers ─────────────────────────────────────────────────────────
+
+lawyer:
+    contact:
+        notice: 'This form is not confidential and creates no relationship between you and the firm. Do not attach or describe <strong>any confidential document or information</strong> here — once your file is open, deposit your documents in the encrypted vault of your client space.'
+
+    areas:
+        lead: The matters in which the firm advises and defends.
+        items: Matters handled
+        cost_text: The fees are agreed with you, in writing, before any work.
+        cost_link: See the fees
+
+    attorney:
+        bar: Bar
+        sworn_in: Sworn in
+        specialisations: '{count, plural, one {Certified specialisation} other {Certified specialisations}}'
+        qualification: Specific qualification
+        dominant_fields: Dominant fields of activity
+
+    fees:
+        title: Fees
+        lead: A lawyer’s fees are free; they are agreed with you before any work, and you know at any time where they stand.
+        agreement: The fee agreement
+        agreement_text: 'Except in an emergency, in a case of force majeure or under full legal aid, the firm concludes a written fee agreement with you: it states the amount of the fees or how they are calculated for the foreseeable work, and the costs and disbursements expected. You are then kept informed of how they evolve.'
+        how: How they are set
+        how_text: The fees take into account, as is customary, your situation, the difficulty of the case, the costs incurred and the work done.
+        terms_missing: The firm has not yet stated here how its fees are set.
+        no_quota_litis: 'A success fee may be added to the agreed fee; it can never be the whole of the remuneration: a pure contingency fee (pacte de quota litis) is forbidden.'
+        first: First appointment
+        legal_aid: Legal aid
+        payment: Payment
+        payment_text: 'Fees are paid by cheque, by bank transfer or by card, on presentation of a fee note. Before any final payment, a detailed account is given to you.'
+        pay_online: Pay a fee note
+        pay_scope: Online payment is for the firm’s fees only. Sums meant for a third party or for the enforcement of a decision are never paid here.
+        dispute: In a disagreement
+        dispute_text: Turn to the firm first. If the dispute persists, disputes over fees are a matter for the bâtonnier; a consumer client may also refer it, free of charge, to the consumer mediator of the lawyers’ profession.
+        dispute_link: Mediation
+
+    mediation:
+        then: Then, the consumer mediator of the lawyers’ profession
+        then_text: If the answer does not satisfy you, or without an answer, a consumer client may refer the matter, free of charge, to the consumer mediator of the lawyers’ profession, set up by the Conseil national des barreaux.
+        body: The bâtonnier
+        body_text: 'The firm is registered with the {body}. Complaints about fees may be brought before its bâtonnier.'
+
+    space:
+        lead: Your appointments and your exhibits, kept safe — the documents are encrypted and never travel by e-mail.
+        documents: Exhibits and documents
+
+    request:
+        notice: 'Say in a few words what it is about, <strong>without any confidential detail or document</strong>, and without naming the other party: the firm first checks that it can assist you. Your documents are then deposited in your client space.'
+        how_3: At the first appointment the fees are agreed in writing; your client space then opens.
+
+    settings:
+        firm: Lawyers — the firm’s name
+        structure: Lawyers — structure of practice (sole practitioner, SELARL, AARPI…)
+        bar: Lawyers — bar of registration
+        network: Lawyers — network the firm belongs to (optional)
+        declared_at: Lawyers — site declared to the conseil de l’Ordre on (YYYY-MM-DD)
+        fees: Lawyers — how the fees are set
+        first_meeting: Lawyers — first appointment (length, price)
+        legal_aid: Lawyers — legal aid (accepted or not, in which matters)
+
+    compliance:
+        domain: Domain name
+        domain_none: The site knows no domain name — configuration legal.lawyer.domains.
+        domain_generic: '{domains}: the domain name must carry the lawyer’s name or the firm’s name; a name that evokes generically the title of lawyer, a field of law or an activity of the profession is forbidden (RIN, art. 10.5).'
+        domain_mixed: '{domains}: the domain name does carry the name, but also a field of law or an activity — to be submitted to the conseil de l’Ordre (RIN, art. 10.5).'
+        domain_unnamed: '{domains}: the lawyer’s name or the firm’s name was not recognised in it (RIN, art. 10.5). Check the firm’s name in Settings.'
+        domain_local: '{domains} is a development address: give the real domain name (configuration legal.lawyer.domains) so that it is checked (RIN, art. 10.5).'
+        order: Site declared to the conseil de l’Ordre
+        order_body_advice: Give the bar of registration in Settings.
+        order_advice: 'The opening of the site, any substantial change and its domain names are to be communicated without delay to the conseil de l’Ordre of the {body} (RIN, art. 10.5). Give the date in Settings; the memo lists what to send.'
+        order_future: The date of the declaration to the conseil de l’Ordre is in the future.
+        identification: Identification of the firm
+        identification_advice: 'Missing: {missing}. Any communication lets the lawyer be identified, located and reached, and names the bar and the structure of practice (RIN, art. 10.2) — Settings, and Places and access.'
+        specialisation: Specialisations and dominant fields of activity
+        specialisation_advice: 'To correct — {found}. Only the holder of a certificate of specialisation uses the words “spécialiste”, “spécialisé”, “spécialité”, “spécialisation”; the dominant fields of activity are three at most (RIN, art. 10.2).'
+        wording: Texts free of comparison and disparagement
+        wording_advice: 'To read again — {found}. Any comparative or disparaging mention and any reference to judicial functions are forbidden (RIN, art. 10.2).'
+        fees: Information on the fees
+        fees_advice: State in Settings how the firm’s fees are set — the Fees page publishes it, with the fee agreement (RIN, art. 11.1 and 11.2).
+        mediator: Contact details of the consumer mediator of the lawyers’ profession
+        mediator_advice: The mediator’s name and contact details are no longer configured (legal.mediator) — the Mediation page and the legal notice publish them.
+        payment: Online payment — fees only
+        payment_missing: Online payment is on but omnibase/marketplace is not installed — the link is not shown.
+        payment_route: Online payment is on without a payment page (legal.lawyer.payment.route) — the link is not shown.
+        payment_scope: 'The payment page must receive fees only (RIN, art. 11.5); funds handled for a client are deposited with the CARPA (RIN, art. 6.2).'
+
+    admin:
+        attorney:
+            singular: Lawyer
+            plural: Lawyers
+        field:
+            items: Matters handled
+            member: Member of the team
+            bar: Bar
+            sworn_in: Year of the oath
+            specialisations: Certified specialisations (certificates held)
+            qualification: Specific qualification
+            dominant_fields: Dominant fields of activity
+        help:
+            body: One paragraph a block, separated by an empty line. No comparison, and no “spécialité” if nobody in the firm holds a certificate.
+            items: One a line.
+            bar: Empty — the firm’s.
+            specialisations: Two at most, from the official list. Only certificates duly obtained and not invalidated.
+            qualification: As the certificate words it.
+            dominant_fields: One a line, three at most, from an actual and habitual practice.
+        declaration:
+            title: Memo — conseil de l’Ordre
+            lead: What the site says today and is communicated to the conseil de l’Ordre. To print or to copy into the letter; nothing is sent from here.
+            to: Addressee
+            to_bar: 'Conseil de l’Ordre of the {bar}'
+            declared: 'site declared on {date}'
+            not_declared: site not declared so far
+            print: Print
+            settings: Settings
+            domains: Domain names
+            domains_rule: 'RIN, art. 10.5 — a lawyer who opens or substantially changes a site informs the conseil de l’Ordre without delay and communicates its domain names. The name carries the lawyer’s or the firm’s, possibly preceded or followed by the word “avocat”.'
+            verdict:
+                ok: carries the name
+                generic: generic — forbidden
+                mixed: carries the name and a field of law — to be submitted
+                unnamed: name not recognised
+                local: development address — cannot be checked
+            mentions: Specialisations, qualifications, dominant fields of activity
+            mentions_rule: 'RIN, art. 10.2 — a lawyer who communicates on specialisations, specific qualifications or dominant fields of activity sends their terms to the conseil de l’Ordre without delay.'
+            pages: Pages presenting the services
+            pages_rule: 'RIN, art. 10.3 — any publicity is communicated to the conseil de l’Ordre without delay.'
+            keep: To keep up over time
+            keep_links: 'Visit regularly the sites this one links to, and remove any link whose target would be contrary to the essential principles of the profession (RIN, art. 10.5).'
+            keep_ads: 'No advertising insert or banner other than the profession’s (RIN, art. 10.5).'
+            keep_change: Any substantial change to the site or to these mentions is declared again.
+            reserve: Compliance built into the site does not replace the control of the conseil de l’Ordre.
+
+    demo:
+        avocate:
+            label: Lawyer
+            description: 'The firm’s agenda, the appointment requests to settle, the clients’ documents: she reads them and sends some.'
+        avocat:
+            label: Associate
+            description: 'The associate lawyer: his agenda, the requests, the clients’ documents, which he reads too.'
+        secretariat:
+            label: Secretariat
+            description: 'The agenda, the appointment requests and the site’s messages; it sees that a document exists, without reading what is confidential.'
+        cabinet:
+            label: Firm
+            description: 'The firm’s administration: the team, the fields of practice, the settings, the memo for the Ordre, compliance.'
+        client:
+            label: Client
+            description: 'Their space: an appointment requested, a draft pleading to read in the vault, a document deposited.'
+
+# ── Notaries ────────────────────────────────────────────────────────
+
+notary:
+    contact:
+        notice: This form is not confidential. Do not attach or describe <strong>any confidential document or information</strong> here — once your file is open, deposit your documents in the encrypted vault of your client space.
+
+    areas:
+        lead: The matters in which the office receives deeds and advises.
+        items: Deeds and formalities
+        cost_text: Most deeds in this field come under the regulated tariff.
+        cost_link: See the tariff
+
+    tariff:
+        title: Tariff
+        lead: A notary’s remuneration is set by the State for regulated deeds; it is the same in every office in France.
+        what: What the “notary’s costs” are made of
+        what_taxes: <strong>Duties and taxes</strong>, collected by the notary on behalf of the State and of local authorities, then paid to the Treasury.
+        what_disbursements: <strong>Disbursements</strong>, sums advanced on your behalf to pay the parties involved and the documents the deed requires.
+        what_emoluments: <strong>The office’s remuneration</strong> — emoluments for regulated deeds, fees for other services.
+        regulated: Regulated deeds — emoluments
+        regulated_text: 'Emoluments are set by the code de commerce (articles L. 444-1 and following, R. 444-1 and following, A. 444-53 and following). The tariff in force is that of the {order}.'
+        regulated_until: 'It applies until {date}.'
+        official: The official text
+        official_code: Code de commerce — the notaries’ tariff (Légifrance)
+        official_order: 'The {order} (Légifrance)'
+        official_info: The tariff explained by the Notaires de France
+        discounts: Discounts practised by the office
+        discounts_missing: The discounts practised are not stated here yet.
+        fees: Services outside the tariff — fees
+        fees_text: For services the tariff does not cover (consultation, advice, the drafting of certain deeds), the notary agrees fees with the client, by a written agreement made before any work.
+        statement: A detailed statement of costs is given to you once the formalities are done; it sets apart the duties paid to the Treasury, the disbursements, the emoluments and the fees.
+        payment: Payment
+        payment_text: No payment is offered on this site. Payments are made at the office, which tells you how.
+        dispute: In a disagreement
+        dispute_text: Turn to the office first. If the dispute persists, you may refer it, free of charge, to the consumer mediator of the notariat.
+        dispute_link: Mediation
+
+    mediation:
+        then: Then, the consumer mediator of the notariat
+        then_text: If the answer does not satisfy you, or without an answer, you may refer the matter, free of charge, to the consumer mediator of the notariat. Attach the complaint you sent to the office.
+        body: The chamber of notaries
+        body_text: 'The office comes under the {body}, which sees to it that the profession’s rules are kept.'
+
+    space:
+        lead: Your appointments and your documents, kept safe — the documents are encrypted and never travel by e-mail.
+        documents: Documents
+
+    request:
+        notice: 'Say in a few words what it is about, <strong>without any confidential detail or document</strong>: the file opens at the appointment, and your documents are then deposited in your client space.'
+        how_3: You receive the confirmation, and an invitation to open your client space.
+
+    settings:
+        holder: Notaries — structure holding the office (name and form)
+        crpcen: Notaries — the office’s CRPCEN number
+        chamber: Notaries — chamber the office depends on
+        declared_at: Notaries — site declared to the chamber on (YYYY-MM-DD)
+        brand: Notaries — graphic charter and “Notaires de France” brand block applied (oui / non)
+        discounts: Notaries — discounts practised, by category of deeds and by band (or “Aucune remise”)
+        fees: Notaries — fees for services outside the tariff
+
+    compliance:
+        email: E-mail addresses in notaires.fr
+        email_advice: 'A notary’s professional address ends with “.{suffix}” (règlement professionnel, art. 16.3). To correct in Places and access: {addresses}.'
+        email_none: 'No e-mail address is given for the office. It must end with “.{suffix}” (règlement professionnel, art. 16.3).'
+        email_sender: 'The site’s e-mails are sent from {addresses}: the sender’s address should end with “.{suffix}” too (règlement professionnel, art. 16.3).'
+        chamber: Site declared to the chamber of notaries
+        chamber_body_advice: Give in Settings the chamber the office depends on.
+        chamber_advice: 'The opening of the site, and any change to the pages where the office offers its services, are to be declared without delay to the {body} (règlement professionnel, art. 14.4). Give the date of the declaration in Settings.'
+        chamber_future: The date of the declaration to the chamber is in the future.
+        mediator: Contact details of the consumer mediator of the notariat
+        mediator_advice: The mediator’s name and contact details must be on the site (règlement professionnel, art. 25.1) — configuration legal.mediator.
+        tariff: Tariff and discounts displayed
+        tariff_link_advice: The tariff page must link to the official text — configuration legal.notary.tariff.
+        tariff_discounts_advice: State in Settings the discounts the office practises, by category of deeds and by band, or that it practises none — they are published on the Tariff page (code de commerce, art. L. 444-4).
+        tariff_outdated: 'The period of the {order} ended on {date}: bring the tariff’s reference up to date (configuration legal.notary.tariff).'
+        wording: Texts free of comparison and disparagement
+        wording_advice: 'To read again — {found}. A notary’s communication stays neutral and objective and abstains from any comparison (règlement professionnel, art. 14.1 and 14.2).'
+        identification: Identification of the office
+        identification_advice: 'Missing: {missing}. The holding structure and the chamber are typed in Settings, the address and the phone in Places and access.'
+        brand: The profession’s graphic charter and brand block
+        brand_advice: The site must follow the graphic charter and the naming plan of the Conseil supérieur du notariat and carry the “Notaires de France” brand block (règlement professionnel, art. 14.4 and 14.5). They are published on the profession’s intranet — confirm in Settings once applied.
+
+    admin:
+        field:
+            items: Deeds and formalities
+        help:
+            body: One paragraph a block, separated by an empty line. No comparison with other offices.
+            items: One a line.
+
+    demo:
+        notaire:
+            label: Notary
+            description: 'The office’s agenda, the appointment requests to settle, the clients’ documents: he reads them and sends some.'
+        clerc:
+            label: Clerk
+            description: 'The files he prepares: the agenda, the requests, the clients’ documents, which he reads as the notary does.'
+        accueil:
+            label: Reception
+            description: 'The switchboard: the agenda, the appointment requests and the site’s messages; it sees that a document exists, without reading what is confidential.'
+        etude:
+            label: Office
+            description: 'The office’s administration: the team, the fields of practice, the settings, the access log, compliance.'
+        client:
+            label: Client
+            description: 'Their space: an appointment requested, a draft deed to read in the vault, a document deposited.'
+
+# ── Jurists ─────────────────────────────────────────────────────────
+
+jurist:
+    activity:
+        legal_consultation: Personalised legal consultation
+        deed_drafting: Drafting deeds for others
+    guard:
+        legal_consultation: 'The text announces a personalised legal consultation or personalised legal advice, reserved to the professions allowed to give it (French law of 31 December 1971, art. 54 ff.). Present the service as training or documentary information, or set the status that allows it (legal.jurist.authorized_status).'
+        deed_drafting: 'The text announces the drafting of deeds for others, reserved to the professions allowed to (French law of 31 December 1971, art. 54): reword it.'

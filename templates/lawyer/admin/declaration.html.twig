@@ -1,0 +1,84 @@
+{# The memo of what is declared to the conseil de l'Ordre (Base\Legal\Lawyer\Controller\Admin\DeclarationController). #}
+{% extends '@Admin/layout.html.twig' %}
+
+{% block page_title %}{{ 'lawyer.admin.declaration.title'|trans({}, 'legal') }}{% endblock %}
+
+{% block content_header %}
+<div class="admin-header">
+    <span class="admin-header-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+    <div class="admin-header-titles">
+        <h1>{{ 'lawyer.admin.declaration.title'|trans({}, 'legal') }}</h1>
+        <div class="admin-header-subtitle">{{ 'lawyer.admin.declaration.lead'|trans({}, 'legal') }}</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<style>
+    .ld { display: grid; gap: 1rem; max-width: 60rem; }
+    .ld .card { padding: 1rem 1.1rem; }
+    .ld h2 { font-size: 1rem; margin: 0 0 .2rem; }
+    .ld .rule { margin: 0 0 .7rem; font-size: .82rem; opacity: .75; }
+    .ld table { width: 100%; font-size: .9rem; }
+    .ld th, .ld td { padding: .4rem .5rem; border-bottom: 1px solid rgba(127,127,127,.25); text-align: left; vertical-align: top; }
+    .ld .is-ok { color: #1a7f37; } .ld .is-warning { color: #9a6700; } .ld .is-missing { color: #cf222e; }
+    .ld ul { margin: 0; padding-left: 1.1rem; }
+    @media print { .admin-sidebar, .admin-topbar, .ld-print { display: none !important; } }
+</style>
+<div class="ld">
+    <div class="card">
+        <h2>{{ 'lawyer.admin.declaration.to'|trans({}, 'legal') }}</h2>
+        <p>{% if record.bar %}{{ 'lawyer.admin.declaration.to_bar'|trans({bar: record.bar}, 'legal') }}{% else %}<span class="is-missing">{{ 'lawyer.compliance.order_body_advice'|trans({}, 'legal') }}</span>{% endif %}
+        — {% if record.declaredAt %}<span class="is-ok">{{ 'lawyer.admin.declaration.declared'|trans({date: record.declaredAt|format_datetime('long', 'none', locale=app.request.locale)}, 'legal') }}</span>{% else %}<span class="is-missing">{{ 'lawyer.admin.declaration.not_declared'|trans({}, 'legal') }}</span>{% endif %}</p>
+        <p class="ld-print"><button type="button" class="btn btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> {{ 'lawyer.admin.declaration.print'|trans({}, 'legal') }}</button> <a class="btn btn-secondary" href="{{ path('admin_settings') }}">{{ 'lawyer.admin.declaration.settings'|trans({}, 'legal') }}</a></p>
+    </div>
+
+    <div class="card">
+        <h2>{{ 'lawyer.admin.declaration.domains'|trans({}, 'legal') }}</h2>
+        <p class="rule">{{ 'lawyer.admin.declaration.domains_rule'|trans({}, 'legal') }}</p>
+        <table>
+            {% for domain, verdict in verdicts %}
+            <tr><td><code>{{ domain }}</code></td><td class="is-{{ verdict == 'ok' ? 'ok' : (verdict == 'generic' ? 'missing' : 'warning') }}">{{ ('lawyer.admin.declaration.verdict.' ~ verdict)|trans({}, 'legal') }}</td></tr>
+            {% else %}
+            <tr><td class="is-warning">{{ 'lawyer.compliance.domain_none'|trans({}, 'legal') }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>{{ 'lawyer.admin.declaration.mentions'|trans({}, 'legal') }}</h2>
+        <p class="rule">{{ 'lawyer.admin.declaration.mentions_rule'|trans({}, 'legal') }}</p>
+        <table>
+            <thead><tr><th>{{ 'lawyer.admin.field.member'|trans({}, 'legal') }}</th><th>{{ 'lawyer.admin.field.specialisations'|trans({}, 'legal') }}</th><th>{{ 'lawyer.admin.field.dominant_fields'|trans({}, 'legal') }}</th></tr></thead>
+            {% for attorney in attorneys %}
+            <tr>
+                <td>{{ attorney.member.displayName }}<br><small>{{ attorney.member.title }}</small></td>
+                <td>{% for specialisation in attorney.specialisations %}{{ specialisation.label }}<br>{% else %}—{% endfor %}{% if attorney.qualification %}<small>{{ attorney.qualification }}</small>{% endif %}</td>
+                <td>{{ attorney.dominantFields ? attorney.dominantFields|join(', ') : '—' }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3">—</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>{{ 'lawyer.admin.declaration.pages'|trans({}, 'legal') }}</h2>
+        <p class="rule">{{ 'lawyer.admin.declaration.pages_rule'|trans({}, 'legal') }}</p>
+        <ul>
+            {% for area in areas %}<li><a href="{{ path('legal_area', {slug: area.slug}) }}" target="_blank" rel="noopener">{{ area.name }}</a> — {{ area.summary }}</li>{% endfor %}
+            <li><a href="{{ path('legal_fees') }}" target="_blank" rel="noopener">{{ 'lawyer.fees.title'|trans({}, 'legal') }}</a></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>{{ 'lawyer.admin.declaration.keep'|trans({}, 'legal') }}</h2>
+        <ul>
+            <li>{{ 'lawyer.admin.declaration.keep_links'|trans({}, 'legal') }}</li>
+            <li>{{ 'lawyer.admin.declaration.keep_ads'|trans({}, 'legal') }}</li>
+            <li>{{ 'lawyer.admin.declaration.keep_change'|trans({}, 'legal') }}</li>
+        </ul>
+        <p class="rule">{{ 'lawyer.admin.declaration.reserve'|trans({}, 'legal') }}</p>
+    </div>
+</div>
+{% endblock %}
