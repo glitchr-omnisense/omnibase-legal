@@ -63,7 +63,7 @@ class AreaCrudController extends AbstractCrudController
 
         yield IdField::new('id')->onlyOnIndex();
         yield TextField::new('name', '@legal.admin.field.name')->setColumns(6);
-        yield SlugField::new('slug')->setColumns(4)->hideOnIndex();
+        yield SlugField::new('slug')->setTargetFieldName('name')->setColumns(4)->hideOnIndex();
         yield IntegerField::new('position', '@legal.admin.field.position')->setColumns(2)->hideOnIndex();
         yield TextareaField::new('summary', '@legal.admin.field.summary')->setRequired(false)->hideOnIndex();
         yield TextareaField::new('body', '@legal.admin.field.body')->setRequired(false)->hideOnIndex()->setHelp($own.'help.body');
