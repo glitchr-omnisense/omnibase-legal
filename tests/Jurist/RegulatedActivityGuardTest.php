@@ -17,6 +17,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class RegulatedActivityGuardTest extends TestCase
 {
+    /** @dataProvider reserved */
     #[DataProvider('reserved')]
     public function testTheWordsOfAReservedActivityAreRefused(string $text, ReservedActivity $activity): void
     {
@@ -38,6 +39,7 @@ final class RegulatedActivityGuardTest extends TestCase
         yield ['Drafting contracts for clients.', ReservedActivity::DEED_DRAFTING];
     }
 
+    /** @dataProvider open */
     #[DataProvider('open')]
     public function testTrainingInformationAndWritingAreOpenToAll(?string $text): void
     {

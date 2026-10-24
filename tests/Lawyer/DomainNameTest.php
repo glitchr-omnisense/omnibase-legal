@@ -19,6 +19,7 @@ final class DomainNameTest extends TestCase
 
     private const NAMES = ['Cabinet Maréval', 'Me Hortense Maréval', 'Me Lucien d’Orgeval'];
 
+    /** @dataProvider domains */
     #[DataProvider('domains')]
     public function testADomainNameIsReadAgainstTheNames(string $host, string $expected): void
     {

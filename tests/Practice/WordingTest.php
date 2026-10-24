@@ -19,6 +19,7 @@ final class WordingTest extends TestCase
 {
     use NeedsOffice;
 
+    /** @dataProvider forbidden */
     #[DataProvider('forbidden')]
     public function testComparisonAndAdvertisingAreFoundWhateverTheProfession(string $text, string $label): void
     {
@@ -44,6 +45,7 @@ final class WordingTest extends TestCase
         yield ['Offre spéciale de rentrée', 'offre spéciale'];
     }
 
+    /** @dataProvider judicial */
     #[DataProvider('judicial')]
     public function testALawyerDoesNotReferToJudicialFunctions(string $text): void
     {
@@ -58,6 +60,7 @@ final class WordingTest extends TestCase
         yield ['Ancienne conseillère prud’homale.'];
     }
 
+    /** @dataProvider allowed */
     #[DataProvider('allowed')]
     public function testThePlainWordsOfTheTradeAreNot(string $text): void
     {

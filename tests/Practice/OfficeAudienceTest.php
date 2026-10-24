@@ -28,6 +28,7 @@ final class OfficeAudienceTest extends TestCase
         yield 'an office: the notaries and the clerks read, the reception sees a title' => ['notary', ['ROLE_NOTARY', 'ROLE_CLERK'], 'ROLE_STAFF'];
     }
 
+    /** @dataProvider practices */
     #[DataProvider('practices')]
     public function testThoseWhoWorkOnTheFilesRead(string $profession, array $readers, string $other): void
     {
@@ -40,6 +41,7 @@ final class OfficeAudienceTest extends TestCase
         }
     }
 
+    /** @dataProvider practices */
     #[DataProvider('practices')]
     public function testTheRestOfTheStaffSeesTheTitleNotTheContent(string $profession, array $readers, string $other): void
     {
@@ -50,6 +52,7 @@ final class OfficeAudienceTest extends TestCase
         self::assertTrue($this->audience($profession)->decide(Audience::READ, $this->document(confidential: false), $staff));
     }
 
+    /** @dataProvider practices */
     #[DataProvider('practices')]
     public function testNobodyOutsideThePractice(string $profession, array $readers, string $other): void
     {
