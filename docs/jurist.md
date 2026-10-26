@@ -25,7 +25,7 @@ or checks is loaded. The profile is the guard:
   `jurist.guard.deed_drafting` (domain `legal`) when the text announces a reserved activity
   (`Jurist\Enum\ReservedActivity`: "consultation juridique", "conseil juridique personnalisé",
   "rédaction d'actes", "legal advice"...), whatever the offering was filed under;
-- with [omnibase/consulting](https://github.com/glitchr-studio/omnibase-consulting), its rule
+- with [omnibase/consulting](https://github.com/glitchr-omnisense/omnibase-consulting), its rule
   `Jurist\Consulting\OfferingRule` (an `OfferingRuleInterface` of that bundle): an offering whose title,
   sentence or presentation announces one does not validate, and the back office prints why under that
   text.

@@ -144,7 +144,7 @@ Templates extend omnibase/office's layout and are overridden the usual way
 
 ## Demonstration accounts
 
-In omniscient/omnibase's `demo` environment the profile declares one account for each role:
+In omnisense/omnibase's `demo` environment the profile declares one account for each role:
 `avocate`, `avocat`, `secretariat`, `cabinet`, `client` (lawyer); `notaire`, `clerc`, `accueil`,
 `etude`, `client` (notary). The password is the identifier; labels `<profession>.demo.<identifier>.*`
 in the `legal` domain. A jurist's site declares its own.
