@@ -1,6 +1,6 @@
 ---
 title: Lawyers - rules and sources
-order: 3
+order: 30
 ---
 
 # Lawyers: rules and sources

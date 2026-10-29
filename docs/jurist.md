@@ -1,6 +1,6 @@
 ---
 title: Jurists - the law of 31 December 1971
-order: 5
+order: 32
 ---
 
 # Jurists: what the law reserves

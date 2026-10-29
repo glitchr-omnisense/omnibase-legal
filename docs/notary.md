@@ -1,6 +1,6 @@
 ---
 title: Notaries - rules and sources
-order: 4
+order: 31
 ---
 
 # Notaries: rules and sources

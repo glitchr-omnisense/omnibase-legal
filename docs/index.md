@@ -166,3 +166,7 @@ The two bundles were one structure twice; they are abandoned for this one (2026-
   `deeds` → `items`), `*_area_member` → `legal_area_member` (`area_id`, `member_id`),
   `lawyer_attorney` → `legal_attorney`, and the settings' paths (`lawyer.firm.name` →
   `legal.practice.name`...). The sites avocat and notaire carry one each to copy.
+
+## More
+
+[Lawyers](lawyer.md) · [Notaries](notary.md) · [Jurists](jurist.md) · [Configuration reference](configuration.md) · [Testing](testing.md)
