@@ -6,7 +6,7 @@ use Base\Demo\DemoAccount;
 use Base\Demo\DemoAccountProviderInterface;
 
 /**
- * The demonstration accounts of a notary's office (glitchr/omnibase's `demo`
+ * The demonstration accounts of a notary's office (omnisense/omnibase's `demo`
  * environment): one for each role the profile and omnibase/office know. The
  * roles of the office come from three groups, as in a real one - "Notaires"
  * (ROLE_NOTARY), "Clercs" (ROLE_CLERK) and "Accueil" (ROLE_STAFF), the first
@@ -19,7 +19,7 @@ use Base\Demo\DemoAccountProviderInterface;
  * and documents in the vault to the client. An office without one of these
  * roles leaves it out: base.demo.exclude.
  *
- * Registered when the installed glitchr/omnibase has the demo environment
+ * Registered when the installed omnisense/omnibase has the demo environment
  * (config/services.php).
  */
 final class NotaryDemoAccounts implements DemoAccountProviderInterface

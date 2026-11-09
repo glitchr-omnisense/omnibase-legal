@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  * brought. Its compliance checks are tagged by omnibase/office's
  * autoconfiguration (ComplianceCheckInterface), its audience resolver too.
  * In each part the back office is loaded when omnibase/admin is installed,
- * the demonstration accounts when glitchr/omnibase has the demo environment.
+ * the demonstration accounts when omnisense/omnibase has the demo environment.
  */
 return function (ContainerConfigurator $configurator, ContainerBuilder $container) {
     $src = dirname(__DIR__).'/src';

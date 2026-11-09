@@ -6,7 +6,7 @@ use Base\Demo\DemoAccount;
 use Base\Demo\DemoAccountProviderInterface;
 
 /**
- * The demonstration accounts of a law firm (glitchr/omnibase's `demo`
+ * The demonstration accounts of a law firm (omnisense/omnibase's `demo`
  * environment): one for each role the profile and omnibase/office know. The
  * roles of the firm come from two groups, as in a real one - "Avocats"
  * (ROLE_LAWYER) and "Secrétariat" (ROLE_SECRETARY), both ROLE_STAFF through
@@ -19,7 +19,7 @@ use Base\Demo\DemoAccountProviderInterface;
  * roles (a lawyer practising alone has no associate) leaves it out:
  * base.demo.exclude.
  *
- * Registered when the installed glitchr/omnibase has the demo environment
+ * Registered when the installed omnisense/omnibase has the demo environment
  * (config/services.php).
  */
 final class LawyerDemoAccounts implements DemoAccountProviderInterface
