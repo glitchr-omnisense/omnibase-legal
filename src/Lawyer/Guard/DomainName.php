@@ -60,7 +60,7 @@ final class DomainName
             return self::LOCAL;
         }
 
-        // What is before the extension: "mareval-avocat" in mareval-avocat.fr, "cabinet.mareval" in www.cabinet.mareval.fr.
+        // What is before the extension: "mareval-avocat" in mareval-avocat.example, "cabinet.mareval" in www.cabinet.mareval.example.
         $labels = explode('.', $host);
         array_pop($labels);
         $tokens = array_values(array_filter(preg_split('/[^a-z]+/', Wording::plain(implode('-', $labels))) ?: [], static fn (string $t) => '' !== $t && 'www' !== $t));

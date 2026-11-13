@@ -29,31 +29,31 @@ final class DomainNameTest extends TestCase
     public static function domains(): iterable
     {
         // The name, alone or with "avocat".
-        yield ['mareval-avocat.fr', DomainName::OK];
-        yield ['www.mareval-avocat.fr', DomainName::OK];
-        yield ['avocat-mareval.fr', DomainName::OK];
-        yield ['mareval.fr', DomainName::OK];
-        yield ['cabinet-mareval.com', DomainName::OK];
-        yield ['marevalavocats.fr', DomainName::OK];
-        yield ['hortense-mareval.avocat.fr', DomainName::OK];
-        yield ['https://MAREVAL-AVOCATS.fr/honoraires', DomainName::OK];
-        yield ['orgeval-avocat.fr', DomainName::OK];
+        yield ['mareval-avocat.example', DomainName::OK];
+        yield ['www.mareval-avocat.example', DomainName::OK];
+        yield ['avocat-mareval.example', DomainName::OK];
+        yield ['mareval.example', DomainName::OK];
+        yield ['cabinet-mareval.example', DomainName::OK];
+        yield ['marevalavocats.example', DomainName::OK];
+        yield ['hortense-mareval.avocat.example', DomainName::OK];
+        yield ['https://MAREVAL-AVOCATS.example/honoraires', DomainName::OK];
+        yield ['orgeval-avocat.example', DomainName::OK];
 
         // Generic: the title, a field of law, an activity - and no name.
-        yield ['avocat-divorce.fr', DomainName::GENERIC];
-        yield ['avocats.fr', DomainName::GENERIC];
-        yield ['droit-du-travail.fr', DomainName::GENERIC];
-        yield ['avocat-permis.com', DomainName::GENERIC];
-        yield ['cabinet-juridique.fr', DomainName::GENERIC];
-        yield ['defense-penale.fr', DomainName::GENERIC];
+        yield ['avocat-divorce.example', DomainName::GENERIC];
+        yield ['avocats.example', DomainName::GENERIC];
+        yield ['droit-du-travail.example', DomainName::GENERIC];
+        yield ['avocat-permis.example', DomainName::GENERIC];
+        yield ['cabinet-juridique.example', DomainName::GENERIC];
+        yield ['defense-penale.example', DomainName::GENERIC];
 
         // The name, and a field of law besides.
-        yield ['mareval-divorce.fr', DomainName::MIXED];
-        yield ['mareval-avocat-droit-travail.fr', DomainName::MIXED];
+        yield ['mareval-divorce.example', DomainName::MIXED];
+        yield ['mareval-avocat-droit-travail.example', DomainName::MIXED];
 
         // No name the site knows.
-        yield ['dupont-avocat.fr', DomainName::UNNAMED];
-        yield ['lexium.fr', DomainName::UNNAMED];
+        yield ['dupont-avocat.example', DomainName::UNNAMED];
+        yield ['lexemplum.example', DomainName::UNNAMED];
 
         // Nothing to assess.
         yield ['localhost', DomainName::LOCAL];
@@ -67,20 +67,20 @@ final class DomainNameTest extends TestCase
     {
         $names = ['Dupont Martin & Associés'];
 
-        self::assertSame(DomainName::OK, DomainName::assess('dma-avocats.fr', $names));
-        self::assertSame(DomainName::OK, DomainName::assess('dupont-martin.fr', $names));
-        self::assertSame(DomainName::UNNAMED, DomainName::assess('xyz-avocats.fr', $names));
+        self::assertSame(DomainName::OK, DomainName::assess('dma-avocats.example', $names));
+        self::assertSame(DomainName::OK, DomainName::assess('dupont-martin.example', $names));
+        self::assertSame(DomainName::UNNAMED, DomainName::assess('xyz-avocats.example', $names));
     }
 
     public function testWithoutAnyNameKnownNothingPasses(): void
     {
-        self::assertSame(DomainName::UNNAMED, DomainName::assess('mareval-avocat.fr', []));
-        self::assertSame(DomainName::GENERIC, DomainName::assess('avocat-divorce.fr', []));
+        self::assertSame(DomainName::UNNAMED, DomainName::assess('mareval-avocat.example', []));
+        self::assertSame(DomainName::GENERIC, DomainName::assess('avocat-divorce.example', []));
     }
 
     public function testAFieldOfLawInAFirmsNameDoesNotMakeItsName(): void
     {
         // "Cabinet Droit Social" has no name in it: its words are generic.
-        self::assertSame(DomainName::GENERIC, DomainName::assess('droit-social.fr', ['Cabinet Droit Social']));
+        self::assertSame(DomainName::GENERIC, DomainName::assess('droit-social.example', ['Cabinet Droit Social']));
     }
 }

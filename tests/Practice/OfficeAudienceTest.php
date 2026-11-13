@@ -21,6 +21,13 @@ final class OfficeAudienceTest extends TestCase
 {
     use NeedsOffice;
 
+    protected function setUp(): void
+    {
+        if (!class_exists(User::class)) {
+            self::markTestSkipped('Needs a host application\'s App\\Entity\\User (omnibase\'s class aliases, the harness).');
+        }
+    }
+
     /** @return iterable<string, array{string, list<string>, string}> the profession, its readers, a role of the rest of its staff */
     public static function practices(): iterable
     {

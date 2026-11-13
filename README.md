@@ -23,8 +23,48 @@ site has no table, page nor check of a lawyer's.
 > The checks help a practice not to forget; what could not be read in an official text is listed as
 > "to confirm" in the rules of each profession, and is not written as a rule.
 
+## Installation
+
 ```sh
 composer require omnibase/legal            # and omnibase/office for a lawyer or a notary
+```
+
+Under Symfony, enable the bundle, choose the profile and import its pages:
+
+```php
+// config/bundles.php - a lawyer's or a notary's site
+Base\Office\OfficeBundle::class => ['all' => true],
+Base\Legal\LegalBundle::class => ['all' => true],
+```
+
+```yaml
+# config/packages/legal.yaml
+legal:
+    profession: lawyer          # lawyer | notary | jurist - required
+```
+
+```yaml
+# config/routes.yaml - after omnibase/office's
+legal:
+    resource: .
+    type: legal
+```
+
+Then the roles of [docs/index.md](docs/index.md#installation) and a migration (`legal_area`,
+`legal_area_member`, a lawyer's `legal_attorney`). A lawyer's site serves `/honoraires`, a notary's
+`/tarifs`, every profile `/domaines` and `/mediation`.
+
+## First use
+
+The rules are plain PHP, usable before any page (a lawyer's rules read omnibase/office's wording
+guard: `composer require omnibase/legal omnibase/office`). Article 10.5 of the RIN, the domain name
+read against the firm's name:
+
+```php
+use Base\Legal\Lawyer\Guard\DomainName;
+
+DomainName::assess('mareval-avocat.example', ['Cabinet Maréval']);   // 'ok': the name, with the title
+DomainName::assess('avocat-divorce.example', ['Cabinet Maréval']);   // 'generic': a field of law and no name
 ```
 
 Documentation: [docs/](docs/index.md) - [lawyers](docs/lawyer.md), [notaries](docs/notary.md),

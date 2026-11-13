@@ -33,24 +33,24 @@ final class ChecksTest extends TestCase
 
     public function testTheDomainNameCarriesTheName(): void
     {
-        $ok = $this->domain(['mareval-avocat.fr'])->check();
+        $ok = $this->domain(['mareval-avocat.example'])->check();
         self::assertTrue($ok->isOk());
         self::assertSame('lawyer.compliance.domain', $ok->label);
         self::assertSame('legal', $ok->domain);
 
-        $generic = $this->domain(['mareval-avocat.fr', 'avocat-divorce.fr'])->check();
+        $generic = $this->domain(['mareval-avocat.example', 'avocat-divorce.example'])->check();
         self::assertSame(ComplianceResult::MISSING, $generic->status);
-        self::assertSame('avocat-divorce.fr', $generic->parameters['domains']);
+        self::assertSame('avocat-divorce.example', $generic->parameters['domains']);
 
-        self::assertSame('lawyer.compliance.domain_mixed', $this->domain(['mareval-divorce.fr'])->check()->advice);
-        self::assertSame('lawyer.compliance.domain_unnamed', $this->domain(['lexium.fr'])->check()->advice);
+        self::assertSame('lawyer.compliance.domain_mixed', $this->domain(['mareval-divorce.example'])->check()->advice);
+        self::assertSame('lawyer.compliance.domain_unnamed', $this->domain(['lexemplum.example'])->check()->advice);
         self::assertSame('lawyer.compliance.domain_local', $this->domain([], 'https://localhost:8573')->check()->advice);
         self::assertSame('lawyer.compliance.domain_none', $this->domain([], null)->check()->advice);
     }
 
     public function testWithoutConfigurationTheDomainIsTheRoutersDefaultAddress(): void
     {
-        self::assertTrue($this->domain([], 'https://www.mareval-avocat.fr')->check()->isOk());
+        self::assertTrue($this->domain([], 'https://www.mareval-avocat.example')->check()->isOk());
     }
 
     // ── RIN art. 10.5, 10.2, 10.3: the Ordre is told ─────────────────
