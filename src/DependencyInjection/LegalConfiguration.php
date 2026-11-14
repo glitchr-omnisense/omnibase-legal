@@ -2,8 +2,8 @@
 
 namespace Base\Legal\DependencyInjection;
 
-use Base\Bundle\AbstractBaseConfiguration;
 use Base\Legal\Profession;
+use Omnibridge\Symfony\Omnibase\Bundle\AbstractBaseConfiguration;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 class LegalConfiguration extends AbstractBaseConfiguration
