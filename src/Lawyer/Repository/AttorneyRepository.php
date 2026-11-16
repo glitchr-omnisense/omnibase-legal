@@ -4,15 +4,15 @@ namespace Base\Legal\Lawyer\Repository;
 
 use Base\Legal\Lawyer\Entity\Attorney;
 use Base\Office\Entity\Member;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
+use Base\Database\Repository\ServiceEntityRepository;
+use Base\Database\Repository\Finders;
 
 /** @extends ServiceEntityRepository<Attorney> */
 class AttorneyRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(Finders $finders)
     {
-        parent::__construct($registry, Attorney::class);
+        parent::__construct($finders, Attorney::class);
     }
 
     public function findOneByMember(?Member $member): ?Attorney
@@ -23,10 +23,6 @@ class AttorneyRepository extends ServiceEntityRepository
     /** @return list<Attorney> those the site shows */
     public function findVisible(): array
     {
-        return $this->createQueryBuilder('a')
-            ->innerJoin('a.member', 'm')->addSelect('m')
-            ->andWhere('m.visible = true')->andWhere('m.active = true')
-            ->orderBy('m.position', 'ASC')->addOrderBy('m.displayName', 'ASC')
-            ->getQuery()->getResult();
+        return $this->findBy(['member.visible' => true, 'member.active' => true], ['member.position' => 'ASC', 'member.displayName' => 'ASC']);
     }
 }

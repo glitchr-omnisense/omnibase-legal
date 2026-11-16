@@ -5,7 +5,7 @@ namespace Base\Legal\Lawyer\Entity;
 use Base\Legal\Lawyer\Enum\Specialisation;
 use Base\Legal\Lawyer\Repository\AttorneyRepository;
 use Base\Office\Entity\Member;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**

@@ -3,7 +3,7 @@
 namespace Base\Legal\DependencyInjection;
 
 use Base\Legal\Profession;
-use Omnibridge\Symfony\Omnibase\Bundle\AbstractBaseExtension;
+use Base\Bundle\AbstractBaseExtension;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

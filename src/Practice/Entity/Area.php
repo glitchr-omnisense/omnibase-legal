@@ -5,7 +5,7 @@ namespace Base\Legal\Practice\Entity;
 use Base\Legal\Practice\Repository\AreaRepository;
 use Base\Office\Entity\Member;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 
 /**
  * A field of practice of the firm or of the office (family, real estate,

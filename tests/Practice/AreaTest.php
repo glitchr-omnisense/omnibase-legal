@@ -3,7 +3,7 @@
 namespace Base\Legal\Tests\Practice;
 
 use Base\Legal\Practice\Entity\Area;
-use Doctrine\ORM\Mapping as ORM;
+use Base\Mapping as ORM;
 use Base\Legal\Tests\NeedsOffice;
 use PHPUnit\Framework\TestCase;
 

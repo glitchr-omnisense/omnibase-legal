@@ -3,7 +3,7 @@
 namespace Base\Legal\Practice\Repository;
 
 use Base\Legal\Practice\Entity\Area;
-use Doctrine\Persistence\ManagerRegistry;
+use Base\Database\Repository\Finders;
 
 /**
  * The finders are omnibase/office's (findActive(), findOneActiveBySlug(), findForMember()).
@@ -12,8 +12,8 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class AreaRepository extends \Base\Office\Repository\AreaRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(Finders $finders)
     {
-        parent::__construct($registry, Area::class);
+        parent::__construct($finders, Area::class);
     }
 }
